@@ -26,6 +26,14 @@ const pgConnection = require('../database-pg/index.js');
 const pgClient = new pg(pgConnection);
 pgClient.connect()
 .then(console.log('pg connected'))
+app.listen(PORT, (err) => {
+	if (err) {
+			console.log(err);
+	}
+	else {
+			console.log(`Server is listening on port ${PORT}`);
+	}
+})
 
 // mongo_client.connect((err) => {
 // 	if (err) throw err;
