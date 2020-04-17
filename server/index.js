@@ -8,17 +8,17 @@ const PORT = 3002;
 const morgan = require("morgan");
 
 //mongo
-const MongoClient = require("mongodb").MongoClient;
-const pg = require("pg").Client;
-const { find, mongoFindById, mongoFindByPrice } = require('../database/dbHelpers.js');
+// const MongoClient = require("mongodb").MongoClient;
+// const { find, mongoFindById, mongoFindByPrice } = require('../database/dbHelpers.js');
 
 //set up raw mongodb
-const url = 'mongodb://localhost:27017';
-const dbName = 'nikeShoes';
-const mongo_client = new MongoClient(url);
-var mongo_db;
+// const url = 'mongodb://localhost:27017';
+// const dbName = 'nikeShoes';
+// const mongo_client = new MongoClient(url);
+// var mongo_db;
 
 //pg
+const pg = require("pg").Client;
 const { pgFind, pgFindById, pgFindLessThanPrice } = require('../database-pg/pgHelpers.js')
 
 //set up postgres connection
@@ -27,21 +27,21 @@ const pgClient = new pg(pgConnection);
 pgClient.connect()
 .then(console.log('pg connected'))
 
-mongo_client.connect((err) => {
-	if (err) throw err;
-	console.log("MongoDb client connected")
-	mongo_db = mongo_client.db(dbName);
+// mongo_client.connect((err) => {
+// 	if (err) throw err;
+// 	console.log("MongoDb client connected")
+// 	mongo_db = mongo_client.db(dbName);
 
-// Start the application after the database connection is ready
-	app.listen(PORT, (err) => {
-			if (err) {
-					console.log(err);
-			}
-			else {
-					console.log(`Server is listening on port ${PORT}`);
-			}
-	})
-});
+// // Start the application after the database connection is ready
+// 	app.listen(PORT, (err) => {
+// 			if (err) {
+// 					console.log(err);
+// 			}
+// 			else {
+// 					console.log(`Server is listening on port ${PORT}`);
+// 			}
+// 	})
+// });
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
