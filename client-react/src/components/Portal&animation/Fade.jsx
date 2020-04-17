@@ -1,0 +1,29 @@
+import React, { useEffect, useState } from "react";
+
+const Fade = ({ show, children }) => {
+  //set toggle based off props
+  const [shouldRender, setRender] = useState(show)
+
+  //
+  useEffect(()=> {
+    if(show) setRender(true)
+  }, [show])
+
+  let onAnimationEnd = () => {
+    if(!show) setRender(false);
+  }
+
+  return (
+    shouldRender && (
+      <div
+        className='fade-in-modal'
+        style={{ animation: `${show ? "fadeIn" : "fadeOut"} 1s` }}
+        onAnimationEnd={onAnimationEnd}
+      >
+        {children}
+      </div>
+    )
+  );
+};
+
+export default Fade;
