@@ -59,24 +59,13 @@ app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname + "/../client-react/dist")));
 app.use('/', router);
 
-// app.listen(PORT, () => {
-// 	console.log(`listening on port`.green, `${PORT}`.cyan);
-// });
+//get loader page
 
-// //router for postgres
-// router.get(`/search/:keyword`, (req, res) => {
-// 	console.log('Searching!-->', req.params);
-// 	console.time('PostGresQueryTime')
-// 	pgFind(pgClient, req.params.keyword)
-// 			.then((result) => {
-// 					console.timeEnd('PostGresQueryTime')
-// 					console.log('Successful!');
-// 					res.status(200).send(result.rows.map(row => row.data));
-// 			})
-// 			.catch((err) => {
-// 					res.status(400).send(err);
-// 			})
-// })
+router.get('/loaderio-c9b8a37215ae77f039572e022a5a61b3/', (req, res) => {
+	res.sendFile(path.join(__dirname + "/../client-react/dist/loader.txt"));
+})
+
+//pg GET
 
 router.get(`/pg_search_id/:id`, (req, res) => {
 	console.log('pg searching nikeID: ', req.params.id);
@@ -92,34 +81,7 @@ router.get(`/pg_search_id/:id`, (req, res) => {
 			})
 })
 
-// router.get(`/search_postgres_price/:price`, (req, res) => {
-// 	console.log('Searching postgres price!-->', req.params.price);
-// 	console.time('PostGres search by price time')
-// 	pgFindLessThanPrice(pgClient, req.params.price)
-// 			.then((result) => {
-// 					console.log('Successful!');
-// 					console.timeEnd('PostGres search by price time')
-// 					res.status(200).send(result.rows.map(row => row.data));
-// 			})
-// 			.catch((err) => {
-// 					res.status(400).send(err);
-// 			})
-// })
-
-// //router for mongo
-// router.get(`/search/:keyword`, (req, res) => {
-//     console.log('Searching!-->', req.params);
-//     console.time('mongoQueryTime')
-//     find(mongo_db, req.params.keyword)
-//         .then((result) => {
-//             console.timeEnd('mongoQueryTime')
-//             console.log('Successful!');
-//             res.status(200).send(result);
-//         })
-//         .catch((err) => {
-//             res.status(400).send(err);
-//         })
-// })
+//mongo GET
 
 router.get(`/search_mongo_id/:id`, (req, res) => {
 	console.log('mongo searching nikeID: ', req.params.id);
@@ -134,17 +96,3 @@ router.get(`/search_mongo_id/:id`, (req, res) => {
 					res.status(400).send(err);
 			})
 })
-
-// router.get(`/search_mongo_price/:price`, (req, res) => {
-// 	console.log('Searching mongo price!-->', req.params.price);
-// 	console.time('mongo search by price time')
-// 	mongoFindByPrice(mongo_db, req.params.price)
-// 			.then((result) => {
-// 					console.log('Successful!');
-// 					console.timeEnd('mongo search by price time')
-// 					res.status(200).send(result);
-// 			})
-// 			.catch((err) => {
-// 					res.status(400).send(err);
-// 			})
-// })
