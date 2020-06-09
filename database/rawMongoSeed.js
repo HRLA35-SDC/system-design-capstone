@@ -38,5 +38,3 @@ async function seedData(db){
     .catch(err => console.log(err))
   }
 }
-
-//seeds MongoDB with shoe artifacts, each with a unique nikeID
