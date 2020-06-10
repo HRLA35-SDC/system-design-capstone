@@ -42,4 +42,4 @@ node seedPg.js
 ```
 ## Metrics
 
-Metrics from horizontally scaling on several EC2 instances can be found [here](https://www.dropbox.com/sh/pj7kdtos0x83zuy/AAAg0RO1BYXRkpeJHQek0B4Oa?dl=0)
+Metrics from horizontally scaling on several EC2 instances can be found [here](https://www.dropbox.com/sh/pj7kdtos0x83zuy/AAAg0RO1BYXRkpeJHQek0B4Oa?dl=0).
