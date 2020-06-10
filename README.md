@@ -13,6 +13,7 @@
 1. [Usage](#Usage)
 1. [Requirements](#requirements)
 1. [Development](#development)
+1. [Metrics](#metrics)
 
 ## Usage
 
@@ -39,4 +40,6 @@ navigate to directory "database-pg"
 node createDataFile.js
 node seedPg.js
 ```
+## Metrics
 
+Metrics from horizontally scaling on several EC2 instances can be found [here](https://www.dropbox.com/sh/pj7kdtos0x83zuy/AAAg0RO1BYXRkpeJHQek0B4Oa?dl=0)
