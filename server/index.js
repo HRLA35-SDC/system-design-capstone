@@ -60,13 +60,11 @@ app.use(express.static(path.join(__dirname + "/../client-react/dist")));
 app.use('/', router);
 
 //get loader page
-
 router.get('/loaderio-c9b8a37215ae77f039572e022a5a61b3/', (req, res) => {
 	res.sendFile(path.join(__dirname + "/../client-react/dist/loader.txt"));
 })
 
-//pg GET
-
+//pg GET route
 router.get(`/pg_search_id/:id`, (req, res) => {
 	console.log('pg searching nikeID: ', req.params.id);
 	console.time('PostGres search by nikeID time')
@@ -82,7 +80,6 @@ router.get(`/pg_search_id/:id`, (req, res) => {
 })
 
 //mongo GET
-
 router.get(`/search_mongo_id/:id`, (req, res) => {
 	console.log('mongo searching nikeID: ', req.params.id);
 	console.time('mongo search by NikeID time')

@@ -874,8 +874,6 @@ let generateZoomShoeSet = () => {
     shoeSet.push(newShoe);
   }
   shoeSet.push(shoe);
-
-  //console.log(shoeSet)
   return shoeSet;
 };
 

@@ -1,13 +1,12 @@
-# Project Name
+# Nike Product Look-up Web-Scale
 
-> Project description
+> Web-scaled a legacy codebase to handle large amounts of traffic and data. Increased database to hold over 10,000,000 records.
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/HRLA35-SDC/Nyke-Nav-SDC
+  - https://github.com/HRLA35-SDC/Nyke-Nav-Nginx
+  - https://github.com/HRLA35-SDC/Brandon-s-Repo--Body
 
 ## Table of Contents
 
@@ -17,7 +16,9 @@
 
 ## Usage
 
-> Some usage instructions
+- Fork or clone
+- Install dependencies
+  - [Click](#development) to see installation procedure
 
 ## Requirements
 
@@ -33,7 +34,9 @@ An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 From within the root directory:
 
 ```sh
-npm install -g webpack
 npm install
+navigate to directory "database-pg"
+node createDataFile.js
+node seedPg.js
 ```
 
